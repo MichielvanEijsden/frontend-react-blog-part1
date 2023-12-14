@@ -1,0 +1,16 @@
+.homepage-container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+
+.homepage-fill{
+    display: flex;
+    flex-direction: column;
+    margin:20px;
+}
+.bottom-text{
+    text-align: end;
+    font-size: 12px;
+}

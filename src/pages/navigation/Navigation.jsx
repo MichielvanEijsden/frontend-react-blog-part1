@@ -4,7 +4,7 @@ import NavLogo from "../../assets/logo-medium.png"
 
 function Navigation() {
     return (
-        <div className="nav-container">
+        <header className="nav-container">
             <div className="nav-img">
                 <img src={NavLogo} alt="Nav Logo"/>
             </div>
@@ -22,7 +22,7 @@ function Navigation() {
                 </ul>
 
             </nav>
-        </div>
+        </header>
     )
 }
 
