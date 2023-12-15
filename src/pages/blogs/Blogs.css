@@ -1,0 +1,22 @@
+.page-layout{
+    display: flex;
+    flex-direction: column;
+}
+.blog-box{
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 1vw;
+}
+li{
+    list-style: none;
+}
+.link-color {
+    color: #38E991;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+}

@@ -25,7 +25,7 @@
 .default-link {
     color: white;
     border-bottom: none;
-
+    text-decoration: none;
 }
 nav{
     width: 50vw;

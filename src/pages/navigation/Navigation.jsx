@@ -13,7 +13,7 @@ function Navigation() {
                     <li><NavLink to="/"
                                  className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink>
                     </li>
-                    <li><NavLink to="/alleposts"
+                    <li><NavLink to="/Blogs"
                                  className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Alle
                         posts</NavLink></li>
                     <li><NavLink to="/NewPost"
