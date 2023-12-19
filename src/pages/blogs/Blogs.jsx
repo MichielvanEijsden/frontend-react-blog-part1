@@ -1,23 +1,25 @@
 import posts from '../../constants/data.json'
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import './Blogs.css'
-import BlogsCounter from "../../helpers/BlogsCounter.jsx";
+
 
 function Blogs() {
 
     return (
-        <div className="page-layout">
-            <h1>Bekijk alle <BlogsCounter/> posts op het platform</h1>
-            {posts.map((post) => {
-                return (
-                    <>
-                        <div className="blog-box">
-                            <p><NavLink to={String(post.id)} className="link-color">{post.title}</NavLink>({post.author})</p>
-                            <p>{post.comments} Reacties - {post.shares} keer gedeeld</p>
-                        </div>
-                    </>)
-            })}
-        </div>
+        <section className="overview-section outer-content-container">
+            <div className="inner-content-container">
+                <h1>Bekijk alle {posts.length} posts op het platform</h1>
+                <ul className="post-list">
+                    {posts.map((post) => {
+                        return <li key={post.id} className="post-item">
+                            <h2 className="post-title"><Link to={`/Blogs/${post.id}`}>{post.title}</Link> ({post.author})
+                            </h2>
+                            <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
+                        </li>
+                    })}
+                </ul>
+            </div>
+        </section>
     );
 }
 

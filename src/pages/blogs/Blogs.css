@@ -1,22 +1,39 @@
-.page-layout{
-    display: flex;
-    flex-direction: column;
+.overview-section {
+    text-align: left;
+
 }
-.blog-box{
-    display: flex;
-    width: 50vw;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 1vw;
+
+.overview-section h1 {
+    margin-top: 0;
 }
-li{
+
+.post-list {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    row-gap: 16px;
+    column-gap: 16px;
+    flex-wrap: wrap;
 }
-.link-color {
+
+.post-title {
+    font-weight: 300;
+    margin-block: 0;
+}
+
+.post-title a {
+    font-weight: 600;
     color: #38E991;
-    font-weight: bold;
-    font-size: 25px;
     text-decoration: none;
+}
+
+.post-item {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    background-color: white;
+    padding: 16px;
+
+    flex-basis: 500px;
+    flex-grow: 1;
+    flex-shrink: 1;
 }

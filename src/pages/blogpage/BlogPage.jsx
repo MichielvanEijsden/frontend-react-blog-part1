@@ -1,28 +1,38 @@
-import {NavLink, useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import posts from '../../constants/data.json'
 import './BlogPage.css'
+import TimeDate from '../../helpers/TimeDate.js'
+
+
+
 function BlogPage() {
     const { id } = useParams();
 
+    const {title, readTime, subtitle, author, created, content, comments, shares} = posts.find((post) => {
+        return post.id.toString() === id;
+    });
+
+
     return (
-        <div>
-            {posts.map((post) => {
+        <section className="post-detail-section outer-content-container">
+            <div className="inner-content-container__text-restriction">
+                <h1>{title}</h1>
+                <h2>{subtitle}</h2>
+                <p className="post-detail-author">Geschreven door <em>{author}</em> op {TimeDate(created)}</p>
+                <span className="post-detail-read-time">
+                    {/*<Clock color="#50535C" size={18}/>*/}
+                    <p> {readTime} minuten lezen</p>
+                </span>
+                <p>{content}</p>
+                <p>{comments} reacties - {shares} keer gedeeld</p>
 
-                if(id === `${post.id}`){
+                <Link to="/posts" className="back-link">
+                    {/*<CaretLeft color="#38E991" size={22}/>*/}
+                    <p>Terug naar de overzichtspagina</p>
+                </Link>
 
-                return (
-                    <>
-                        <div className="blog-box">
-                            <h1>{post.title}</h1>
-                            <h4>{post.subtitle}</h4>
-                            <p>Geschreven door {post.author} op {post.created}</p>
-                            <p>{post.content}</p>
-                            <p>{post.comments} Reacties - {post.shares} keer gedeeld</p>
-                            <NavLink to="/Blogs" className="return-link-color"> Terug naar overzichtspagina</NavLink>
-                        </div>
-                    </>)}
-            })}
-        </div>
+            </div>
+        </section>
     )
 }
 export default BlogPage
