@@ -30,25 +30,27 @@ function NewPost(){
     }
 
     return(
-        <form  onSubmit={handleSubmit(handleFormSubmit)} className="contactForm">
+        <section className="container">
+            <div className="">
+        <form  onSubmit={handleSubmit(handleFormSubmit)} className="new-post-form">
             <label>Title:</label>
                 <input type="text" id='post-title' {...register("title",{required:{value: true,message:'voer een title in'}})}/>
             {errors.title && <p className="form-error-message">{errors.title.message}</p>}
             <label>Subtitle:</label>
                 <input type="text" id='post-subtilte' {...register("subtitle",{required:{value: true,message:'voer een subtitle in'}})}/>
             {errors.subtitle && <p className="form-error-message">{errors.subtitle.message}</p>}
-            <label>
-                Your name:
+            <label>Your name:</label>
                 <input type="text" id='post-autor'{...register("author",{required:{value: true,message:'vul je naam in'}})}/>
                 {errors.author && <p className="form-error-message">{errors.author.message}</p>}
-            </label>
-            <label className='list'>Blog:</label>
+            <label className='list'>Your Blog:</label>
                 <textarea rows="10" cols="40" id='post-content' {...register("content",{maxLength:{value: 100,message:'het bericht is te lang'}})}/>
             {errors.content && <p className="form-error-message">{errors.content.message}</p>}
             <button type="submit">
                 Verzend
             </button>
         </form>
+            </div>
+        </section>
     )
 
 }

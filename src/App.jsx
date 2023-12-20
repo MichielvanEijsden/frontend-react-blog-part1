@@ -6,6 +6,7 @@ import Blogs from "./pages/blogs/Blogs.jsx";
 import BlogPage from "./pages/blogpage/BlogPage.jsx";
 import NewPost from "./pages/newpost/NewPost.jsx";
 import ErrorPage from "./pages/errorpage/Errorpage.jsx";
+import Footer from "./pages/footer/Footer.jsx";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         </Routes>
             </main>
             <footer>
-
+            <Footer/>
             </footer>
         </>
     )
