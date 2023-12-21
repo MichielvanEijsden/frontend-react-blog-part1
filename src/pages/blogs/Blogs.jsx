@@ -17,7 +17,6 @@ function Blogs() {
     async function fetchAllBlogs() {
         try {
             const result = await axios.get('http://localhost:3000/posts')
-            console.log(result.data);
             setAllBlogs(result.data)
 
         } catch (e) {
