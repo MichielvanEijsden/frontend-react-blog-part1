@@ -1,9 +1,10 @@
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 
 import './BlogPage.css'
 import TimeDate from '../../helpers/TimeDate.js'
 import {useEffect, useState} from "react";
 import axios from "axios";
+import ErrorPage from "../errorpage/Errorpage.jsx";
 
 
 
@@ -13,7 +14,7 @@ function BlogPage() {
 
     const [oneBlog,setOneBlog]=useState([])
     const [error,setError]=useState()
-
+    const navigate = useNavigate()
 
     async function fetchOneBlog() {
         try {
@@ -36,7 +37,7 @@ useEffect(() => {
 
 
     return (
-        <>
+        <>{Object.keys(oneBlog).length > 0 ?
         <section className="post-detail-section outer-content-container">
             <div className="inner-content-container__text-restriction">
                 <h1>{oneBlog.title}</h1>
@@ -56,6 +57,7 @@ useEffect(() => {
 
             </div>
         </section>
+            : navigate('*') }
         </>
     )
 
