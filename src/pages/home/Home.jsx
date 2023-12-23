@@ -1,5 +1,5 @@
 import './Home.css'
-
+import billboard from '../../assets/billboard-logo.png'
 function Home(){
     return(
         <div className="container">
@@ -9,10 +9,10 @@ function Home(){
                 Bij Blogventure geloven we in de kracht van woorden*
             </h1>
                 <figure>
-            <img src="/" alt="Afbeelding van schreeuwerig billboard"/>
+            <img src={billboard} alt="Afbeelding van schreeuwerig billboard"/>
                     <figcaption>*En in Billboards. Die zijn niet te missen namelijk</figcaption>
                 </figure>
-                copied from
+
                 <p>We geloven dat iedereen een verhaal te
                     vertellen heeft, avonturen te delen en kennis te verspreiden. Daarom hebben we een platform
                     gecreëerd waar creativiteit, passie en ontdekking samenkomen.</p>
