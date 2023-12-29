@@ -43,7 +43,7 @@ function NewPost(){
                 <input type="text" id='post-autor'{...register("author",{required:{value: true,message:'vul je naam in'}})}/>
                 {errors.author && <p className="form-error-message">{errors.author.message}</p>}
             <label className='list'>Your Blog:</label>
-                <textarea rows="10" cols="40" id='post-content' {...register("content",{maxLength:{value: 100,message:'het bericht is te lang'}})}/>
+                <textarea rows="10" cols="40" id='post-content' {...register("content",{maxLength:{value: 2000,message:'het bericht is te lang'}})}/>
             {errors.content && <p className="form-error-message">{errors.content.message}</p>}
             <button type="submit">
                 Verzend
